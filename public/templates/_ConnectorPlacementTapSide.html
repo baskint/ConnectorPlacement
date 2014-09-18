@@ -1,0 +1,196 @@
+
+<div class="connector-source-area">
+  <div class="form-inline">
+    <!-- add button -->
+    <a class="btn btn-success btn-sm connector-button-width" ng-click="addConnector('tap')">
+      <i class="fa fa-plus-square"></i> <strong>Add</strong>
+    </a>
+    <!-- delete button -->
+    <a class="btn btn-danger btn-sm connector-button-width" style="float:right;" ng-click="deleteConnector()" ng-disabled="connectorDelete">
+      <i class="fa fa-minus-square"></i> <strong>Delete</strong>
+    </a>
+  </div>
+  <div class="connector-source-elements">
+    <div ng-repeat="connector in connectorPlacement.tapConnectors">
+      <div class="drop-connector actual-drop-zone" x-pd-drop-target="false" x-on-drop='dropped(dragEl, dropEl, "tap")'>
+        <div class="connector-source-container" x-pd-draggable="true" ng-class="{'selected-connector': connector.id == selectedConnectorId }"
+             ng-click="connectorClicked(connector.id)">
+          <div id="{{connector.id}}" class="connector-source-square">
+            <div class="connector-source-circle">
+              <div class="connector-source-line1"></div>
+              <div class="connector-source-line2"></div>
+              <div class="connector-source-line3"></div>
+            </div>
+          </div>
+                        <span>
+                            <strong>{{connector.label}}</strong>
+                        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-inline">
+  <!-- Type -->
+  <div class="form-group" style="margin-left:20px;">
+    <label class=" control-label">
+      Type:
+    </label>
+    <select id="tapConnectorType" ng-model="connectorPlacement.tapConnectorType" class="form-control"
+            ng-options="ct for ct in connectorPlacement.tapConnectorTypeOptions"></select>
+    <div class="col-sm-2">
+      <span class="error" ng-show="connectorPlacement.tapConnectorType.$error.required">Required</span>
+    </div>
+  </div>
+  <!-- Size -->
+  <div class="form-group">
+    <label class="control-label">Size:</label>
+    <!-- where did max/min numbers come from?? -->
+    <input id="tapConnectorSize" type="number" class="form-control" name="tapConnectorSize" step="any" style="width:200px;"
+           min="-1000000000" max="1000000000"
+           ng-model="connectorPlacement.tapConnectorSize"
+           placeholder="0" />
+    <div class="col-sm-2">
+      <span class="error" ng-show="connectorPlacement.tapConnectorSize.$error.required">Required and must be a number</span>
+    </div>
+  </div>
+  <!-- Label -->
+  <div class="form-group">
+    <label class="control-label">Label:</label>
+    <input id="tapConnectorLabel" type="text" class="form-control" style="width:200px;"
+           ng-disabled=""
+           ng-model="connectorPlacement.tapConnectorLabel"
+           ng-change="uiChange()"
+           placeholder="enter a value" required />
+
+    <div class="col-sm-2">
+      <span class="error" ng-show="connectorPlacement.tapConnectorLabel.$error.required">Required</span>
+    </div>
+  </div>
+
+</div>
+<div class="connector-placement-area">
+  <div class="row" style="padding-top:10px">
+    <div class="col-xs-2 col-md-2" style="margin: 0 auto;">
+      <div class="drop-connector">
+        <div id="tLT-1"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div>
+          <strong>LT-1</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2 "></div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2" style="float:right;">
+      <div class=" drop-connector">
+        <div id="tRT-1"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>RT-1</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-md-2">
+      <div class="drop-connector">
+        <div id="tLT-2"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>LT-2</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2" style="margin-left:-45px;">
+      <div class="drop-connector">
+        <div id="tLT-5"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>LT-5</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2">
+      <div class="drop-connector" style="margin-right:-80px">
+        <div id="tRT-5"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>RT-5</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2" style="float:right">
+      <div class="drop-connector">
+        <div id="tRT-2"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>RT-2</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-md-2">
+      <div class="drop-connector">
+        <div id="tLT-3"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>LT-3</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2" style="margin-left:-45px;">
+      <div class="drop-connector">
+        <div id="tLT-4"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')"><div class="connector-circle"></div><strong>LT-4</strong></div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-xs-2 col-md-2">
+      <div class="drop-connector" style="margin-right:-80px">
+        <div id="tRT-4"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tap')">
+          <div class="connector-circle"></div><strong>RT-4</strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 col-md-2" style="float:right">
+      <div class="drop-connector">
+        <div id="tRT-3"
+             class="connector-container drop-container actual-drop-zone"
+             style="margin: 0 auto;"
+             x-pd-drop-target="true"
+             x-on-drop="dropped(dragEl, dropEl, 'tab')"><div class="connector-circle"></div><strong>RT-3</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+

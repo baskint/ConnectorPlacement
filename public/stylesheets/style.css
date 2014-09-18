@@ -1,0 +1,166 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*#region Connector Placement*/
+.connector-placement-form {
+    width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.connector-placement-area {
+    height: 475px;
+    width: 800px;
+    background-color: #5C832F;
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.connector-source-area {
+    float: left;
+    margin: 15px;
+    height: 450px;
+    width: 175px;
+    position: relative;
+    background-color: whitesmoke
+}
+
+.connector-source-elements {
+    margin-top: 5px;
+    height: 480px;
+    background-color: #382513;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.connector-placement-next {
+    margin-top:20px;
+}
+
+.connector-button-width {
+    width:75px
+}
+
+.connector-container {
+    background-color: #FFFACD;
+    border-radius: 5px;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #111111;
+}
+
+.connector-circle {
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #d3d3d3;
+    border: 2px solid #111111;
+}
+
+.connector-source-square {
+    width: 39px;
+    height: 39px;
+    background: #d3d3d3;
+    margin: 0 auto;
+    border: 1px solid #111111;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.connector-source-circle {
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #867b7b;
+    border: 2px solid #111111;
+    margin: 0 auto;
+
+}
+
+.connector-source-container {
+    background-color:  #5C832F;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Calibri;
+    height: 70px;
+    width: 70px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #b8860b;
+    padding: 10px;
+}
+
+.drop-connector {
+    background-color: #D8CAA8;
+    border-radius: 2px;
+    padding: 5px;
+    text-align: center;
+    font-family: Calibri;
+    height: 80px;
+    width: 80px;
+    border-width: 2px;
+    border-color: #c4dbe0;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.actual-drop-zone {
+    /* nothing here yet */
+}
+
+.connector-source-line1 {
+    border-top: 2px solid #111111;
+    width: 50%;
+    margin-top: 8px;
+    -moz-transform: rotate(-55deg); /* Firefox */
+    -webkit-transform: rotate(-55deg); /* WebKit (Chrome, Safari) */
+    -o-transform: rotate(-55deg); /* Opera */
+    -ms-transform: rotate(-55deg); /* IE9 */
+    transform: rotate(-55deg); /* No support currently, but hooray future! */
+}
+
+
+.connector-source-line2 {
+    border-top: 2px solid #111111;
+    width: 50%;
+    margin-top: -2px;
+    margin-left: 13px;
+    -moz-transform: rotate(55deg); /* Firefox */
+    -webkit-transform: rotate(55deg); /* WebKit (Chrome, Safari) */
+    -o-transform: rotate(55deg); /* Opera */
+    -ms-transform: rotate(55deg); /* IE9 */
+    transform: rotate(55deg); /* No support currently, but hooray future! */
+}
+
+.connector-source-line3 {
+    border-top: 2px solid #111111;
+    width: 50%;
+    margin-top: 8px;
+    margin-left: 6px;
+}
+
+.selected-connector {
+    background-color: #b8860b;
+    border-radius: 5px;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    border: 2px solid #5C832F;
+}
+
+/*#endregion*/

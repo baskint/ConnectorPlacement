@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <link rel="stylesheet" href="../public/stylesheets/style.css"/>
+
+  <!-- JQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Angular JS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.min.js"></script>
+
+  <!-- Application scripts -->
+  <script src="../public/app/app.js"></script>
+  <script src="../public/app/connectorPlacement/connectorPlacementController.js"></script>
+  <script src="../public/app/connectorPlacement/connectorPlacementRepository.js"></script>
+  <script src="../public/app/connectorPlacement/connectorPlacementDirective.js"></script>
+  <title>Connector Placement</title>
+</head>
+
+<body ng-app="connectorPlacement" ng-controller="ConnectorPlacementController">
+<div class="page-header">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Frontplate Connector Placement</h2>
+    </div>
+  </div>
+</div>
+
+<ul class="nav nav-tabs">
+  <li ng-class="{active: item.active}" style="width:200px;" class="text-center active">
+    <a data-target=" #sourceSide" data-toggle="tab"><strong>Source Side</strong></a>
+  </li>
+  <li ng-class="{active: item.active}" style="width:200px;" class="text-center">
+    <a data-target="#tapSide" data-toggle="tab"><strong>Tap Side</strong></a>
+  </li>
+</ul>
+
+<form name="connectorPlacementForm" class="connector-placement-form" role="form" ng-submit="save(connectorPlacement)"
+      novalidate>
+  <div class="row">
+    <div class="tab-content">
+      <!-- Source Side -->
+      <div class="tab-pane fade in active" id="sourceSide" connector-source-side></div>
+      <!-- Tap Side -->
+      <div class="tab-pane fade" id="tapSide" connector-tap-side></div>
+    </div>
+  </div>
+
+  <div class="form-group" style="float:right;">
+
+    <button class="btn btn-large btn-warning connector-placement-next"
+            type="submit" ng-disabled="connectorPlacementForm.$error.valid">
+      <i class='fa fa-arrow-circle-right fa-2x'></i>
+      Next
+    </button>
+  </div>
+</form>
+
+
+</body>
+
+
+<footer>
+  <span>developed by Baskin Tapkan</span>
+
+</footer>
+</html>
